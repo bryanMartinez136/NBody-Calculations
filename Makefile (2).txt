@@ -1,0 +1,16 @@
+# all: cpu gpu
+
+gpu: NBody.cu
+	nvcc -o a.out NBody.cu
+
+# cpu: nbody.cpp
+# 	nvcc -o b.out nbody.cpp
+
+run: gpu
+	./a.out 10 > NBody.pdb
+# ./b.out 10 > nbody-cpu.pdb
+
+clean:
+	rm -f a.out NBody.pdb
+# rm -f b.out nbody-cpu.pdb
+
