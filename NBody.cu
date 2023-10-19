@@ -93,9 +93,9 @@ __global__ void forces(float* dev_body, float* dev_fx, float* dev_fy, float* dev
         // TODO: compute gravitational force between body i and x
         F = -1.0*(G*dev_body[i*W+MASS]*dev_body[x*W+MASS]) / rr; 
         norm(x_diff, y_diff, z_diff); 
-        dev_fx[i] += x_diff*F; 
-        dev_fy[i] += y_diff*F; 
-        dev_fz[i] += z_diff*F; 
+        dev_fx[i] += (x_diff/r)*F; 
+        dev_fy[i] += (y_diff/r)*F; 
+        dev_fz[i] += (z_diff/r)*F; 
       } 
     }
   }
