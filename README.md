@@ -28,15 +28,10 @@ To use this N-Body simulation:
 Compile the code, ensuring you have CUDA installed and properly configured on your system.
 
 shell
-Copy code
 nvcc nbody.cu -o nbody
 Run the executable with the desired number of time steps:
 
 shell
-Copy code
 ./nbody <number_of_timesteps>
 Output
 The simulation outputs the positions of particles at each time step in PDB format. These positions represent the simulated trajectory of the bodies.
-
-License
-This code is provided under an unspecified license. Please refer to the code's license or contact the author for more information.
